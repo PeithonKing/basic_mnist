@@ -1,5 +1,7 @@
 torch
+torchvision
 flask
+tqdm
 # notebook
 # numpy
 # matplotlib

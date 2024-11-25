@@ -35,7 +35,7 @@ class ConvNet(nn.Module):
         x = self.fc2(x)
         return x
 
-model = torch.load('model.pth', map_location=torch.device('cpu'))["model"]
+model = torch.load('training/model_aug.pth', map_location=torch.device('cpu'))["model"]
 model.eval()
 
 app = Flask(__name__, static_folder='static')
