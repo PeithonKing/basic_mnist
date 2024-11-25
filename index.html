@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Histogram</title>
+	<script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
+</head>
+
+<body>
+	<div id="histogram" style="width:500px; height:500px;"></div>
+
+	<!-- <script>
+		// const data = [0.1, 0.2, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 1.0];
+		const data = [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1];
+		Plotly.newPlot('histogram', [{
+			x: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+			y: data,
+			type: 'bar',
+		}], {
+			title: '',
+			xaxis: { title: '' },
+			yaxis: { title: '' }
+		});
+	</script> -->
+
+	<script>
+		let plot;
+	
+		function initGraph() {
+			const initData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+			plot = Plotly.newPlot('histogram', [{
+				x: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+				y: initData,
+				type: 'bar',
+			}], {
+				title: '',
+				xaxis: { title: '' },
+				yaxis: { title: '' }
+			});
+		}
+	
+		function updateGraph(data) {
+			if (plot) {
+				const layout = plot.layout;
+				const dataUpdate = [{
+					x: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+					y: data,
+					type: 'bar',
+				}];
+				Plotly.react('histogram', dataUpdate, layout);
+			} else {
+				console.error("Graph not initialized");
+			}
+		}
+	
+		initGraph();
+	
+		// Example usage of updateGraph function
+		updateGraph([0.1, 0.2, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 1.0]);
+	</script>
+
+
+
+
+</body>
+
+</html>

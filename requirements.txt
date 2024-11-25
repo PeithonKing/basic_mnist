@@ -1,0 +1,5 @@
+torch
+flask
+# notebook
+# numpy
+# matplotlib
